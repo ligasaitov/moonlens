@@ -1384,7 +1384,7 @@ body.ie .ibg img {
   -ms-transform: translate3d(-100%, 0px, 0px);
   -o-transform: translate3d(-100%, 0px, 0px);
   -moz-transform: translate3d(-100%, 0px, 0px);
-  background-image: url("/img/lens.png");
+  background-image: url("../img/lens.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -1591,7 +1591,7 @@ body.ie .ibg img {
   padding-top: 100px;
   padding-bottom: 40px;
   background: #273687;
-  background-image: url("/img/bg2.png");
+  background-image: url("../img/bg2.png");
   background-repeat: no-repeat;
   background-position: bottom left 50px;
   background-size: contain;
@@ -1849,6 +1849,6 @@ body.ie .ibg img {
 
 .webp .section--one{ background-image: url(/img/bg.webp); }
 
-.webp .section--one .container:after{ background-image: url(/img/lens.webp); }
+.webp .section--one .container:after{ background-image: url(../img/lens.webp); }
 
-.webp .section--three{ background-image: url(/img/bg2.webp); }
+.webp .section--three{ background-image: url(../img/bg2.webp); }
