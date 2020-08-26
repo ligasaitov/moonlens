@@ -1015,6 +1015,53 @@ jQuery('img.svg').each(function () {
 	}, 'xml');
 
 });
+if($('.ten__slider').length>0){
+	$('.ten__slider').slick({
+		autoplay: true,
+		//infinite: false,
+		dots: false,
+		arrows: true,
+		accessibility:false,
+		// centerMode: true,
+		slidesToShow:2,
+		slidesToScroll: 1,
+		adaptiveHeight: true,
+		autoplaySpeed: 5000,
+		//asNavFor:'',
+		//appendDots:
+		appendArrows:$('.ten__slider_arrows'),
+		nextArrow:'<button type="button" class="slick-next"><img src="img/right-arrow.png"></button>',
+		prevArrow:'<button type="button" class="slick-prev"><img src="img/left-arrow.png"></button>',
+		responsive: [{
+			breakpoint: 768,
+			settings: {}
+		}]
+	});
+}
+
+if($('.eleven__slider').length>0){
+	$('.eleven__slider').slick({
+		autoplay: true,
+		//infinite: false,
+		dots: false,
+		arrows: true,
+		accessibility:false,
+		// centerMode: true,
+		slidesToShow:3,
+		slidesToScroll: 1,
+		adaptiveHeight: true,
+		autoplaySpeed: 5000,
+		//asNavFor:'',
+		//appendDots:
+		appendArrows:$('.eleven__slider_arrows'),
+		nextArrow:'<button type="button" class="slick-next"><img src="img/right-arrow-w.png"></button>',
+		prevArrow:'<button type="button" class="slick-prev"><img src="img/left-arrow-w.png"></button>',
+		responsive: [{
+			breakpoint: 768,
+			settings: {}
+		}]
+	});
+}
 
 var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
 if (isMobile.any()) { }
@@ -1032,21 +1079,6 @@ if (isMobile.any()) { }
 	var act = "click";
 	if (isMobile.iOS()) {
 		var act = "touchstart";
-	}
-
-	if (!isMobile.any()) {
-		textTyped();
-	}
-
-	// TYPED 
-	function textTyped() {
-		var typed = new Typed('.main__clip', {
-		    stringsElement: '#typed-strings',
-		    loop: true,
-		    typeSpeed: 50,
-		    backSpeed: 20,
-		    backDelay: 1000
-		  });
 	}
 
 	let iconMenu = document.querySelector(".icon-menu");
@@ -1241,6 +1273,8 @@ $('body').on('click', '.spoller', function (event) {
 	return false;
 });
 
+
+
 function scrolloptions() {
 	var scs = 100;
 	var mss = 50;
@@ -1273,6 +1307,50 @@ if (navigator.appVersion.indexOf("Mac") != -1) {
 	if ($('.scroll-body').length > 0) { scroll(); }
 }
 
+/*
+function scrollwhouse(){
+		var scs=100;
+		var mss=50;
+		var bns=false;
+	if(isMobile.any()){
+		scs=10;
+		mss=1;
+		bns=true;
+	}
+	var opt={
+		cursorcolor:"#afafaf",
+		cursorwidth: "5px",
+		background: "",
+		autohidemode:false,
+		railalign: 'left',
+		cursoropacitymax: 1,
+		bouncescroll:bns,
+		cursorborderradius: "0px",
+		scrollspeed:scs,
+		mousescrollstep:mss,
+		directionlockdeadzone:0,
+		cursorborder: "0px solid #fff",
+	};
+	return opt;
+}
+$('.whouse-content-body').niceScroll('.whouse-content-scroll',scrollwhouse());
+$('.whouse-content-body').scroll(function(event) {
+		var s=$(this).scrollTop();
+		var r=Math.abs($(this).outerHeight()-$('.whouse-content-scroll').outerHeight());
+		var p=s/r*100;
+	$('.whouse-content__shadow').css({opacity:1-1/100*p});
+});
+*/
+
+$('.do-nicescroll').niceScroll({
+	cursorcolor: "#959dcb",
+	cursorwidth: "15px",
+	cursorborder: "1px solid $bg",
+	background: "$bg",
+	mousescrollstep: "40",
+	scrollspeed: "60"
+});
+
 if ($('.t,.tip').length > 0) {
 	tip();
 }
@@ -1293,127 +1371,11 @@ function tip() {
 	});
 }
 
-// BURGER
-$('.header__burger').click(function(event) {
-	$('.header__burger, .header__menu').toggleClass('active');
-	$('body').toggleClass('lock');
-});
-
-$('.header__link').click(function(event) {
-	$('.header__burger, .header__menu').toggleClass('active');
-	$('body').toggleClass('lock');
-	$('.header__burger, .header__menu').removeClass('active');
-	$('body').removeClass('lock');
-});
-
-// PROGRESS
-function progressCountActive() {
-	var isDone = false;
-
-	var targetNum = $('.resume__progress_bar_h');
-	var targetNumPos = targetNum.offset().top;
-	var winHeight = $(window).height();
-	var scrollToElem = targetNumPos - winHeight;
-
-	$(window).scroll(function(){
-		var winScrollTop = $(this).scrollTop();
-		if(winScrollTop > scrollToElem){
-		 		// Сработает, когда экран достигнет элемента в переменной target
-
-		 		if(!isDone) {
-		 		 // Ваша ф-ция которая что то делает, отработает 1 раз и все
-
-		 		 $('.resume__progress_bar_h').addClass('active');
-
-		 		 isDone = true;
-		 		}
-		 	}
-		 });
-}
-progressCountActive();
-
-
-function progressCountHTML() {
-	var isDone = false;
-
-	var targetNum = $('.resume__progress_bar_h');
-	var targetNumPos = targetNum.offset().top;
-	var winHeight = $(window).height();
-	var scrollToElem = targetNumPos - winHeight;
-
-	$(window).scroll(function(){
-		var winScrollTop = $(this).scrollTop();
-		if(winScrollTop > scrollToElem){
-		 		// Сработает, когда экран достигнет элемента в переменной target
-
-		 		if(!isDone) {
-		 		 // Ваша ф-ция которая что то делает, отработает 1 раз и все
-
-		 		 var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(' ', 3, '%');
-		 		 var decimal_places = 1;
-		 		 var decimal_factor = decimal_places === 0 ? 1 : Math.pow(10, decimal_places);
-
-		 		 $('.num-1').animateNumber({
-		 		 	number: 100,
-		 		 	numberStep: comma_separator_number_step
-		 		 },
-		 		 {
-		 		 	easing: 'swing',
-		 		 	duration: 3000
-		 		 }
-		 		 );
-
-		 		 $('.num-2').animateNumber({
-		 		 	number: 100,
-		 		 	numberStep: comma_separator_number_step
-		 		 },
-		 		 {
-		 		 	easing: 'swing',
-		 		 	duration: 3000
-		 		 }
-		 		 );
-
-		 		 $('.num-3').animateNumber({
-		 		 	number: 83,
-		 		 	numberStep: comma_separator_number_step
-		 		 },
-		 		 {
-		 		 	easing: 'swing',
-		 		 	duration: 3000
-		 		 }
-		 		 );
-
-		 		 $('.num-4').animateNumber({
-		 		 	number: 78,
-		 		 	numberStep: comma_separator_number_step
-		 		 },
-		 		 {
-		 		 	easing: 'swing',
-		 		 	duration: 3000
-		 		 }
-		 		 );
-
-		 		 isDone = true;
-		 		}
-		 	}
-		 });
-}
-progressCountHTML();
-
-// GO TOP
 $(window).scroll(function () {
-	if ($(this).scrollTop() > 500) {
-		$('#scroller').fadeIn();
-	} else {
-		$('#scroller').fadeOut();
-	}
+  if ($(this).scrollTop() > 600) {
+    $('.header').addClass('fix');
+  } else {
+    $('.header').removeClass('fix');
+  }
 });
-$('#scroller').click(function () {
-	$('body,html').animate({
-		scrollTop: 0
-	}, 400);
-	return false;
-});
-
-
 });
