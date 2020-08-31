@@ -3990,8 +3990,9 @@ a {
 
 .thirteen__form {
   background: #273687;
-  border-radius: 60px;
+  border-radius: 250px;
   padding: 70px 150px;
+  position: relative;
 }
 
 .thirteen__form_title {
@@ -4000,6 +4001,25 @@ a {
   font-weight: 700;
   text-align: center;
   margin-bottom: 20px;
+}
+
+.thirteen__form_block {
+  position: relative;
+  z-index: 5;
+}
+
+.thirteen__form_block:after {
+  content: '';
+  width: 307px;
+  height: 307px;
+  background-image: url("../img/moon-form.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  top: -70px;
+  left: -90px;
+  z-index: -1;
 }
 
 .form-block__item {
@@ -4485,6 +4505,8 @@ a {
 .webp .seven__moon{ background-image: url(../img/moon-2.webp); }
 
 .webp .nine__title span{ background-image: url(../img/moon-3.webp); }
+
+.webp .thirteen__form_block:after{ background-image: url(../img/moon-form.webp); }
 
 .webp .stars-1{ background-image: url(../img/star-1.webp); }
 
