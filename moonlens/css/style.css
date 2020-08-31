@@ -2198,8 +2198,8 @@ body.ie .ibg img {
   -ms-transform: scale(0.5);
   -webkit-transform: scale(0.5);
   transform: scale(0.5);
-  -webkit-animation: circle-1 8s infinite linear;
-          animation: circle-1 8s infinite linear;
+  -webkit-animation: circle-1 4s infinite linear;
+          animation: circle-1 4s infinite linear;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   z-index: 1;
@@ -2218,8 +2218,8 @@ body.ie .ibg img {
   -ms-transform: scale(0.5);
   -webkit-transform: scale(0.5);
   transform: scale(0.5);
-  -webkit-animation: circle-2 10s infinite linear;
-          animation: circle-2 10s infinite linear;
+  -webkit-animation: circle-2 5s infinite linear;
+          animation: circle-2 5s infinite linear;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   z-index: 1;
@@ -2244,9 +2244,9 @@ body.ie .ibg img {
 
 @-webkit-keyframes circle-1 {
   0% {
-    -ms-transform: scale(0);
-    -webkit-transform: scale(0);
-    transform: scale(0);
+    -ms-transform: scale(0.91);
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
     opacity: 1;
   }
 
@@ -2260,9 +2260,9 @@ body.ie .ibg img {
 
 @keyframes circle-1 {
   0% {
-    -ms-transform: scale(0);
-    -webkit-transform: scale(0);
-    transform: scale(0);
+    -ms-transform: scale(0.91);
+    -webkit-transform: scale(0.91);
+    transform: scale(0.91);
     opacity: 1;
   }
 
@@ -2276,9 +2276,9 @@ body.ie .ibg img {
 
 @-webkit-keyframes circle-2 {
   0% {
-    -ms-transform: scale(0);
-    -webkit-transform: scale(0);
-    transform: scale(0);
+    -ms-transform: scale(0.81);
+    -webkit-transform: scale(0.81);
+    transform: scale(0.81);
     opacity: 1;
   }
 
@@ -2292,9 +2292,9 @@ body.ie .ibg img {
 
 @keyframes circle-2 {
   0% {
-    -ms-transform: scale(0);
-    -webkit-transform: scale(0);
-    transform: scale(0);
+    -ms-transform: scale(0.81);
+    -webkit-transform: scale(0.81);
+    transform: scale(0.81);
     opacity: 1;
   }
 
@@ -2799,8 +2799,8 @@ body.ie .ibg img {
   -ms-transform: scale(0.5);
   -webkit-transform: scale(0.5);
   transform: scale(0.5);
-  -webkit-animation: circle-1 8s infinite linear;
-          animation: circle-1 8s infinite linear;
+  -webkit-animation: circle-1 3s infinite linear;
+          animation: circle-1 3s infinite linear;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   z-index: 1;
@@ -2818,8 +2818,8 @@ body.ie .ibg img {
   -ms-transform: scale(0.5);
   -webkit-transform: scale(0.5);
   transform: scale(0.5);
-  -webkit-animation: circle-2 10s infinite linear;
-          animation: circle-2 10s infinite linear;
+  -webkit-animation: circle-2 5s infinite linear;
+          animation: circle-2 5s infinite linear;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   z-index: 1;
@@ -3180,8 +3180,8 @@ a {
   -ms-transform: scale(0.5);
   -webkit-transform: scale(0.5);
   transform: scale(0.5);
-  -webkit-animation: circle-1 8s infinite linear;
-          animation: circle-1 8s infinite linear;
+  -webkit-animation: circle-1 3s infinite linear;
+          animation: circle-1 3s infinite linear;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   z-index: 1;
@@ -3200,8 +3200,8 @@ a {
   -ms-transform: scale(0.5);
   -webkit-transform: scale(0.5);
   transform: scale(0.5);
-  -webkit-animation: circle-1 10s infinite linear;
-          animation: circle-1 10s infinite linear;
+  -webkit-animation: circle-1 5s infinite linear;
+          animation: circle-1 5s infinite linear;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   z-index: 1;
@@ -4018,7 +4018,7 @@ a {
   background-position: center;
   position: absolute;
   top: -70px;
-  left: -90px;
+  left: -115px;
   z-index: -1;
 }
 
