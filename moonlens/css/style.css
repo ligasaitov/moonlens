@@ -3783,6 +3783,7 @@ a {
   margin: 0px -18px;
   width: 100%;
   margin-bottom: 50px;
+  z-index: 2;
 }
 
 .eleven__slider_item {
