@@ -1,3 +1,40 @@
+const animItems = document.querySelectorAll('._anim-items');
+
+if (animItems.length > 0) {
+	window.addEventListener('scroll', animOnScroll);
+	function animOnScroll(params) {
+		for (let index = 0; index < animItems.length; index++) {
+			const animItem = animItems[index];
+			const animItemHeight = animItem.offsetHeight;
+			const animItemOffset = offset(animItem).top;
+			const animStart = 3;
+
+			let animItemPoint = window.innerHeight - animItemHeight / animStart;
+
+			if (animItemHeight > window.innerHeight) {
+				animItemPoint = window.innerHeight - animItemHeight / animStart;
+			}
+
+			if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
+				animItem.classList.add('_active');
+			} else {
+				if (!animItem.classList.contains('_anim-no-hide')) {
+					animItem.classList.remove('_active');
+				}
+			}
+		}
+	}
+	function offset(el) {
+		const rect = el.getBoundingClientRect(),
+		scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+		scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+	}
+
+	setTimeout(() => {
+		animOnScroll();
+	}, 500);
+}
 $(document).ready(function() {
 		var w=$(window).outerWidth();
 		var h=$(window).outerHeight();
@@ -1275,37 +1312,37 @@ $('body').on('click', '.spoller', function (event) {
 
 
 
-function scrolloptions() {
-	var scs = 100;
-	var mss = 50;
-	var bns = false;
-	if (isMobile.any()) {
-		scs = 10;
-		mss = 1;
-		bns = true;
-	}
-	var opt = {
-		cursorcolor: "#fff",
-		cursorwidth: "4px",
-		background: "",
-		autohidemode: true,
-		cursoropacitymax: 0.4,
-		bouncescroll: bns,
-		cursorborderradius: "0px",
-		scrollspeed: scs,
-		mousescrollstep: mss,
-		directionlockdeadzone: 0,
-		cursorborder: "0px solid #fff",
-	};
-	return opt;
-}
-function scroll() {
-	$('.scroll-body').niceScroll('.scroll-list', scrolloptions());
-}
-if (navigator.appVersion.indexOf("Mac") != -1) {
-} else {
-	if ($('.scroll-body').length > 0) { scroll(); }
-}
+		function scrolloptions() {
+			var scs = 100;
+			var mss = 50;
+			var bns = false;
+			if (isMobile.any()) {
+				scs = 10;
+				mss = 1;
+				bns = true;
+			}
+			var opt = {
+				cursorcolor: "#fff",
+				cursorwidth: "4px",
+				background: "",
+				autohidemode: true,
+				cursoropacitymax: 0.4,
+				bouncescroll: bns,
+				cursorborderradius: "0px",
+				scrollspeed: scs,
+				mousescrollstep: mss,
+				directionlockdeadzone: 0,
+				cursorborder: "0px solid #fff",
+			};
+			return opt;
+		}
+		function scroll() {
+			$('.scroll-body').niceScroll('.scroll-list', scrolloptions());
+		}
+		if (navigator.appVersion.indexOf("Mac") != -1) {
+		} else {
+			if ($('.scroll-body').length > 0) { scroll(); }
+		}
 
 /*
 function scrollwhouse(){
@@ -1365,17 +1402,18 @@ function tip() {
 		padding: false,
 		//hideEmpty: true
 		onShow: function ($element) { },
-		onHide: function ($element) { },
-	}).on('show.webui.popover hide.webui.popover', function (e) {
-		$(this).toggleClass('active');
-	});
-}
+			onHide: function ($element) { },
+		}).on('show.webui.popover hide.webui.popover', function (e) {
+				$(this).toggleClass('active');
+			});
+	}
 
-$(window).scroll(function () {
-  if ($(this).scrollTop() > 600) {
-    $('.header').addClass('fix');
-  } else {
-    $('.header').removeClass('fix');
-  }
-});
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 600) {
+			$('.header').addClass('fix');
+		} else {
+			$('.header').removeClass('fix');
+		}
+	});
+
 });
