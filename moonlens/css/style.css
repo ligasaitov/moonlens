@@ -2147,9 +2147,8 @@ body.ie .ibg img {
 
 .btn-dark {
   background-color: transparent;
-  background-image: -webkit-gradient(linear, right top, left top, from(#307cf3), color-stop(99%, #01d9ce), to(#01d9ce));
-  background-image: -o-linear-gradient(right, #307cf3 0%, #01d9ce 99%, #01d9ce 100%);
-  background-image: linear-gradient(to left, #307cf3 0%, #01d9ce 99%, #01d9ce 100%);
+  background: -o-linear-gradient(181deg, #307cf3, #01d9ce);
+  background: linear-gradient(269deg, #307cf3, #01d9ce);
   text-transform: none;
   padding: 0;
   display: -webkit-box;
@@ -2186,6 +2185,40 @@ body.ie .ibg img {
 
 .btn-dark:hover span {
   background: transparent;
+}
+
+.btn {
+  background-size: 600% 600%;
+  -webkit-animation: buttonGradient 6s linear infinite;
+  animation: buttonGradient 6s linear infinite;
+}
+
+@-webkit-keyframes buttonGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes buttonGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .one__lens_angle {
