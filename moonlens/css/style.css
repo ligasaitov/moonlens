@@ -1677,7 +1677,7 @@ body.ie .ibg img {
 .header__logo:before {
   content: '';
   position: absolute;
-  top: -61px;
+  top: -74px;
   left: -52px;
   width: 162px;
   height: 162px;
@@ -1832,6 +1832,83 @@ body.ie .ibg img {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
   bottom: 8px;
+}
+
+.header__body {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 114px;
+}
+
+.menu__icon {
+  width: 65px;
+  height: 54px;
+  position: relative;
+  display: none;
+}
+
+.menu__icon span {
+  width: 100%;
+  height: 14px;
+  background: #fff;
+  border-radius: 10px;
+  display: block;
+  position: absolute;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.menu__icon span:nth-child(1) {
+  left: 0;
+  top: 0;
+}
+
+.menu__icon span:nth-child(2) {
+  left: 0;
+  top: 20px;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+
+.menu__icon span:nth-child(3) {
+  left: 0;
+  bottom: 0;
+}
+
+.menu__icon.active span:nth-child(1) {
+  left: 0;
+  top: 26px;
+  height: 1px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.menu__icon.active span:nth-child(2) {
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
+}
+
+.menu__icon.active span:nth-child(3) {
+  left: 0;
+  bottom: 26px;
+  height: 1px;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.header.fix .header__body {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 64px;
 }
 
 .footer__body {
@@ -2261,6 +2338,10 @@ body.ie .ibg img {
   z-index: -1;
 }
 
+.section--two {
+  position: relative;
+}
+
 .section--two .container {
   background: #fff;
   position: relative;
@@ -2467,11 +2548,23 @@ body.ie .ibg img {
   padding-top: 100px;
   padding-bottom: 40px;
   background: #273687;
-  background-image: url("../img/bg2.png");
-  background-repeat: no-repeat;
-  background-position: bottom left 50px;
-  background-size: contain;
   position: relative;
+}
+
+.section--three .section--three-bg {
+  position: absolute;
+  max-height: 733px;
+  max-width: 1100px;
+  height: 100%;
+  width: 100%;
+  left: 100px;
+  bottom: 0;
+  z-index: 2;
+}
+
+.section--three .section--three-bg img {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .section--three .container {
@@ -3338,14 +3431,27 @@ a {
 
 .section--seven {
   background: #273687;
-  background-image: url("../img/baby.png");
-  background-repeat: no-repeat;
-  background-size: 60%;
-  background-position: bottom -134px center;
   color: #fff;
   padding-top: 110px;
   padding-bottom: 260px;
   position: relative;
+  overflow: hidden;
+}
+
+.section--seven .section--seven-bg {
+  position: absolute;
+  max-height: -webkit-calc(605px - 142px);
+  max-height: calc(605px - 142px);
+  max-width: 876px;
+  height: 100%;
+  width: 100%;
+  left: 50%;
+  bottom: -71px;
+  -webkit-transform: translate(-50%, 0px);
+      -ms-transform: translate(-50%, 0px);
+          transform: translate(-50%, 0px);
+  z-index: 2;
+  overflow: hidden;
 }
 
 .section--seven .container {
@@ -4681,27 +4787,19 @@ a {
   max-height: 263px;
   width: 100%;
   height: 100%;
-  background-image: url("../img/star-1.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   position: absolute;
   top: 0;
   left: 0;
 }
 
 .stars-2 {
-  max-width: 389px;
+  max-width: 350px;
   max-height: 759px;
   width: 100%;
   height: 100%;
-  background-image: url("../img/star-2.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   position: absolute;
-  top: 218px;
-  left: 0;
+  bottom: -220px;
+  left: 0px;
   z-index: 1;
 }
 
@@ -4710,13 +4808,9 @@ a {
   max-height: 623px;
   width: 100%;
   height: 100%;
-  background-image: url("../img/star-3.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 200px;
   z-index: 1;
 }
 
@@ -4725,10 +4819,6 @@ a {
   max-height: 402px;
   width: 100%;
   height: 100%;
-  background-image: url("../img/star-4.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   position: absolute;
   top: 0;
   right: 366px;
@@ -4740,10 +4830,6 @@ a {
   max-height: 606px;
   width: 100%;
   height: 100%;
-  background-image: url("../img/star-5.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   position: absolute;
   top: -100px;
   right: 0;
@@ -4755,10 +4841,6 @@ a {
   max-height: 745px;
   width: 100%;
   height: 100%;
-  background-image: url("../img/star-6.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   position: absolute;
   top: -150px;
   right: 0;
@@ -4770,10 +4852,6 @@ a {
   max-height: 759px;
   width: 100%;
   height: 100%;
-  background-image: url("../img/star-7.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   position: absolute;
   top: -200px;
   left: 0;
@@ -4785,10 +4863,6 @@ a {
   max-height: 398px;
   width: 100%;
   height: 100%;
-  background-image: url("../img/star-8.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   position: absolute;
   top: 434px;
   left: -150px;
@@ -4800,10 +4874,6 @@ a {
   max-height: 331px;
   width: 100%;
   height: 100%;
-  background-image: url("../img/star-9.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   position: absolute;
   top: 0;
   right: 392px;
@@ -4815,10 +4885,6 @@ a {
   max-height: 491px;
   width: 100%;
   height: 100%;
-  background-image: url("../img/star-10.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   position: absolute;
   bottom: -50px;
   right: 192px;
@@ -4830,10 +4896,6 @@ a {
   max-height: 759px;
   width: 100%;
   height: 100%;
-  background-image: url("../img/star-11.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   position: absolute;
   top: 0;
   left: 0;
@@ -4845,10 +4907,6 @@ a {
   max-height: 402px;
   width: 100%;
   height: 100%;
-  background-image: url("../img/star-12.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   position: absolute;
   top: -50px;
   right: 150px;
@@ -4860,10 +4918,6 @@ a {
   max-height: 598px;
   width: 100%;
   height: 100%;
-  background-image: url("../img/star-13.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   position: absolute;
   top: 163px;
   right: 50px;
@@ -4875,10 +4929,6 @@ a {
   max-height: 455px;
   width: 100%;
   height: 100%;
-  background-image: url("../img/star-14.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   position: absolute;
   top: 0;
   left: 300px;
@@ -4890,10 +4940,6 @@ a {
   max-height: 465px;
   width: 100%;
   height: 100%;
-  background-image: url("../img/star-15.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   position: absolute;
   bottom: 0;
   right: 50px;
@@ -4905,10 +4951,6 @@ a {
   max-height: 460px;
   width: 100%;
   height: 100%;
-  background-image: url("../img/star-16.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
   position: absolute;
   bottom: 350px;
   right: 250px;
@@ -4928,7 +4970,7 @@ a {
   position: fixed;
   top: 150px;
   right: 14%;
-  z-index: 10;
+  z-index: 2;
 }
 
 .fixed_buttons_item {
@@ -5054,6 +5096,91 @@ a {
   }
 }
 
+@media (max-width: 991px) {
+  .header__logo {
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
+    z-index: 1;
+  }
+
+  .header__menu {
+    -webkit-box-ordinal-group: 4;
+    -webkit-order: 3;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+
+  .select-block {
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+
+  .menu__icon {
+    display: block;
+    z-index: 1;
+  }
+
+  .menu__body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: -webkit-gradient(linear, left top, left bottom, from(#273687), color-stop(99%, #01dacf), to(#01dacf));
+    background: -o-linear-gradient(top, #273687 0%, #01dacf 99%, #01dacf 100%);
+    background: linear-gradient(to bottom, #273687 0%, #01dacf 99%, #01dacf 100%);
+    -webkit-transform: translate(0px, -100%);
+        -ms-transform: translate(0px, -100%);
+            transform: translate(0px, -100%);
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+  .menu__body.active {
+    -webkit-transform: translate(0px, 0px);
+        -ms-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+
+  .menu__body .menu__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .menu__body .menu__list li {
+    margin-bottom: 45px;
+  }
+
+  .menu__body .menu__list li:last-child {
+    margin-bottom: 0;
+  }
+
+  .menu__body .menu__list .menu__link {
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 41.98px;
+  }
+}
+
 @media (max-width: 767.98px) {
   .container {
     max-width: none;
@@ -5087,48 +5214,12 @@ a {
 
 .webp .instagram{ background-image: url(../img/socials.webp); }
 
-.webp .section--three{ background-image: url(../img/bg2.webp); }
-
 .webp .five__video a span{ background-image: url(../img/play.webp); }
 
 .webp .five__link-more_arrow{ background-image: url(../img/more-arrow.webp); }
-
-.webp .section--seven{ background-image: url(../img/baby.webp); }
 
 .webp .seven__moon{ background-image: url(../img/moon-2.webp); }
 
 .webp .nine__title span{ background-image: url(../img/moon-3.webp); }
 
 .webp .thirteen__form_block:after{ background-image: url(../img/moon-form.webp); }
-
-.webp .stars-1{ background-image: url(../img/star-1.webp); }
-
-.webp .stars-2{ background-image: url(../img/star-2.webp); }
-
-.webp .stars-3{ background-image: url(../img/star-3.webp); }
-
-.webp .stars-4{ background-image: url(../img/star-4.webp); }
-
-.webp .stars-5{ background-image: url(../img/star-5.webp); }
-
-.webp .stars-6{ background-image: url(../img/star-6.webp); }
-
-.webp .stars-7{ background-image: url(../img/star-7.webp); }
-
-.webp .stars-8{ background-image: url(../img/star-8.webp); }
-
-.webp .stars-9{ background-image: url(../img/star-9.webp); }
-
-.webp .stars-10{ background-image: url(../img/star-10.webp); }
-
-.webp .stars-11{ background-image: url(../img/star-11.webp); }
-
-.webp .stars-12{ background-image: url(../img/star-12.webp); }
-
-.webp .stars-13{ background-image: url(../img/star-13.webp); }
-
-.webp .stars-14{ background-image: url(../img/star-14.webp); }
-
-.webp .stars-15{ background-image: url(../img/star-15.webp); }
-
-.webp .stars-16{ background-image: url(../img/star-16.webp); }
